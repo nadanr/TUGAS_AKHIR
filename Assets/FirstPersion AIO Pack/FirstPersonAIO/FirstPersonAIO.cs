@@ -148,13 +148,13 @@ public class FirstPersonAIO : MonoBehaviour {
     #endregion
 
     #region Headbobbing Settings
-    public bool useHeadbob = true;
+    public bool useHeadbob = false;
     public Transform head = null;
     public float headbobFrequency = 1.5f;
     public float headbobSwayAngle = 5f;
     public float headbobHeight = 3f;
     public float headbobSideMovement =5f;  
-    public bool useJumdLandMovement = true;
+    public bool useJumdLandMovement = false;
     public float jumpAngle =3f;
     public float landAngle = 60;
     private Vector3 originalLocalPosition;
@@ -522,7 +522,7 @@ public class BETA_SETTINGS{
 
         #endregion
 
-        #region Headbobbing Settings - FixedUpdate
+        /*#region Headbobbing Settings - FixedUpdate
         float yPos = 0;
         float xPos = 0;
         float zTilt = 0;
@@ -598,14 +598,14 @@ public class BETA_SETTINGS{
                     {
                         if(!previousGrounded)
                         {
-                            if(_useFootStepSounds && dynamicFootstep.currentClipSet.Any()) { /*audioSource.PlayOneShot(dynamicFootstep.currentClipSet[Random.Range(0, dynamicFootstep.currentClipSet.Count)],Volume/10);*/ }
+                            if(_useFootStepSounds && dynamicFootstep.currentClipSet.Any()) { *//*audioSource.PlayOneShot(dynamicFootstep.currentClipSet[Random.Range(0, dynamicFootstep.currentClipSet.Count)],Volume/10);*//* }
                             nextStepTime = headbobCycle + 0.5f;
                         } else
                         {
                             if(headbobCycle > nextStepTime)
                             {
                                 nextStepTime = headbobCycle + 0.5f;
-                                if(_useFootStepSounds && dynamicFootstep.currentClipSet.Any()){ /*audioSource.PlayOneShot(dynamicFootstep.currentClipSet[Random.Range(0, dynamicFootstep.currentClipSet.Count)],Volume/10);*/ }
+                                if(_useFootStepSounds && dynamicFootstep.currentClipSet.Any()){ *//*audioSource.PlayOneShot(dynamicFootstep.currentClipSet[Random.Range(0, dynamicFootstep.currentClipSet.Count)],Volume/10);*//* }
                             }
                         }
                         previousGrounded = true;
@@ -613,7 +613,7 @@ public class BETA_SETTINGS{
                     {
                         if(previousGrounded)
                         {
-                            if(_useFootStepSounds && dynamicFootstep.currentClipSet.Any()){ /*audioSource.PlayOneShot(dynamicFootstep.currentClipSet[Random.Range(0, dynamicFootstep.currentClipSet.Count)],Volume/10);*/ }
+                            if(_useFootStepSounds && dynamicFootstep.currentClipSet.Any()){ *//*audioSource.PlayOneShot(dynamicFootstep.currentClipSet[Random.Range(0, dynamicFootstep.currentClipSet.Count)],Volume/10);*//* }
                         }
                         previousGrounded = false;
                     }
@@ -624,7 +624,7 @@ public class BETA_SETTINGS{
                     {
                         if(!previousGrounded)
                         {
-                            if(_useFootStepSounds && landSound){ /*audioSource.PlayOneShot(landSound,Volume/10);*/ }
+                            if(_useFootStepSounds && landSound){ *//*audioSource.PlayOneShot(landSound,Volume/10);*//* }
                             nextStepTime = headbobCycle + 0.5f;
                         } else
                         {
@@ -632,7 +632,7 @@ public class BETA_SETTINGS{
                             {
                                 nextStepTime = headbobCycle + 0.5f;
                                 int n = Random.Range(0, footStepSounds.Count);
-                                if(_useFootStepSounds && footStepSounds.Any()){ /*audioSource.PlayOneShot(footStepSounds[n],Volume/10);*/ }
+                                if(_useFootStepSounds && footStepSounds.Any()){ *//*audioSource.PlayOneShot(footStepSounds[n],Volume/10);*//* }
                                 footStepSounds[n] = footStepSounds[0];
                             }
                         }
@@ -641,7 +641,7 @@ public class BETA_SETTINGS{
                     {
                         if(previousGrounded)
                         {
-                            if(_useFootStepSounds && jumpSound){ /*audioSource.PlayOneShot(jumpSound,Volume/10);*/ }
+                            if(_useFootStepSounds && jumpSound){ *//*audioSource.PlayOneShot(jumpSound,Volume/10);*//* }
                         }
                         previousGrounded = false;
                     }
@@ -653,7 +653,7 @@ public class BETA_SETTINGS{
                 {
                     if(!previousGrounded)
                     {
-                        if(_useFootStepSounds && landSound) { /*audioSource.PlayOneShot(landSound,Volume/10);*/ }
+                        if(_useFootStepSounds && landSound) { *//*audioSource.PlayOneShot(landSound,Volume/10);*//* }
                         nextStepTime = headbobCycle + 0.5f;
                     } else
                     {
@@ -661,7 +661,7 @@ public class BETA_SETTINGS{
                         {
                             nextStepTime = headbobCycle + 0.5f;
                             int n = Random.Range(0, footStepSounds.Count);
-                            if(_useFootStepSounds && footStepSounds.Any()){ /*audioSource.PlayOneShot(footStepSounds[n],Volume/10);*/}
+                            if(_useFootStepSounds && footStepSounds.Any()){ *//*audioSource.PlayOneShot(footStepSounds[n],Volume/10);*//*}
                             
                         }
                     }
@@ -670,14 +670,14 @@ public class BETA_SETTINGS{
                 {
                     if(previousGrounded)
                     {
-                        if(_useFootStepSounds && jumpSound) { /*audioSource.PlayOneShot(jumpSound,Volume/10);*/ }
+                        if(_useFootStepSounds && jumpSound) { *//*audioSource.PlayOneShot(jumpSound,Volume/10);*//* }
                     }
                     previousGrounded = false;
                 }
             }
 
         
-        #endregion
+        #endregion*/
 
     }
 
@@ -846,8 +846,8 @@ public class BETA_SETTINGS{
             EditorGUILayout.Space();
 
 
-            EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
-            GUILayout.Label("Headbobbing Setup",new GUIStyle(GUI.skin.label){alignment = TextAnchor.MiddleCenter,fontStyle = FontStyle.Bold, fontSize = 13},GUILayout.ExpandWidth(true));
+            /*EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
+            GUILayout.Label("Headbobbing Setup",new GUIStyle(GUI.skin.label){alignment = TextAnchor.MiddleCenter,fontStyle = FontStyle.Bold, fontSize = 13},GUILayout.ExpandWidth(false));
             EditorGUILayout.Space();
             EditorGUILayout.Space();
             t.useHeadbob = EditorGUILayout.ToggleLeft(new GUIContent("Enable Headbobbing","Determines if headbobbing will be used."),t.useHeadbob);
@@ -866,7 +866,7 @@ public class BETA_SETTINGS{
             GUI.enabled = false;
             EditorGUILayout.Space();
             EditorGUILayout.LabelField("",GUI.skin.horizontalSlider);
-
+*/
 
             GUILayout.Label("Audio/SFX Setup",new GUIStyle(GUI.skin.label){alignment = TextAnchor.MiddleCenter,fontStyle = FontStyle.Bold, fontSize = 13},GUILayout.ExpandWidth(true));
             EditorGUILayout.Space();
