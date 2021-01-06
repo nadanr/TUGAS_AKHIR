@@ -1,19 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI; //harus pake
 
 public class PlayerInteraction : MonoBehaviour
 {
-    [SerializeField]
-    private LayerMask layerMask;
+    [SerializeField] //cari sendiri
+    private LayerMask layerMask; 
     [SerializeField]
     private Camera camera;
     [SerializeField]
-    private Image interactionImage;
+    private Image interactionImage; 
 
     public Transform PlayerCamera;
-    public float range = 2f;
+    public float range = 2f; 
 
     private void Update()
     {
@@ -47,6 +47,19 @@ public class PlayerInteraction : MonoBehaviour
                 Door doorScript = hit.transform.GetComponent<Door>();
                 doorScript.Pressed();
             }
+
+            else if(hit.transform.tag == "Photocopy")
+            {
+                Photocopy photocopyScript = hit.transform.GetComponent<Photocopy>();
+                photocopyScript.ShowInfo();
+            }
+
+            else if(hit.transform.tag == "Television")
+            {
+                Television televisionScript = hit.transform.GetComponent<Television>();
+                televisionScript.ShowInfo();
+            }
+
         }
     }
 }
