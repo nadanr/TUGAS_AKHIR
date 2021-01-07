@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class Television : MonoBehaviour
 {
-    public Image televisionInfoUI;
+    public GameObject layarTV;
 
     public void ShowInfo()
     {
-        televisionInfoUI.gameObject.SetActive(true);
+        layarTV.gameObject.SetActive(true);
 
     }
 
@@ -17,7 +17,7 @@ public class Television : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            televisionInfoUI.gameObject.SetActive(false);
+            layarTV.gameObject.SetActive(false);
         }
     }
 

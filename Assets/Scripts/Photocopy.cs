@@ -9,8 +9,7 @@ public class Photocopy : MonoBehaviour
 
     public void ShowInfo()
     {
-        infoUI.gameObject.SetActive(true);
-        
+       infoUI.gameObject.SetActive(true);
     }
 
     private void Update()
