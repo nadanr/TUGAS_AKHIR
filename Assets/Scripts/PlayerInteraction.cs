@@ -48,6 +48,12 @@ public class PlayerInteraction : MonoBehaviour
                 doorScript.Pressed();
             }
 
+            if (hit.transform.tag == "Lift")
+            {
+                Lift liftScript = hit.transform.GetComponent<Lift>();
+                liftScript.Pressed();
+            }
+
             else if(hit.transform.tag == "Photocopy")
             {
                 Photocopy photocopyScript = hit.transform.GetComponent<Photocopy>();

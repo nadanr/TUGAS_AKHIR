@@ -7,6 +7,8 @@ TagManager:
   - Door
   - Photocopy
   - Television
+  - NextSceneCollider
+  - Lift
   layers:
   - Default
   - TransparentFX
