@@ -60,6 +60,12 @@ public class PlayerInteraction : MonoBehaviour
                 photocopyScript.ShowInfo();
             }
 
+            else if (hit.transform.tag == "Restricted")
+            {
+                ResDoor resDoorScript = hit.transform.GetComponent<ResDoor>();
+                resDoorScript.ShowInfo();
+            }
+
             else if(hit.transform.tag == "Television")
             {
                 Television televisionScript = hit.transform.GetComponent<Television>();

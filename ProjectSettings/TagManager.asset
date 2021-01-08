@@ -9,6 +9,8 @@ TagManager:
   - Television
   - NextSceneCollider
   - Lift
+  - Restricted
+  - LiftSwitch
   layers:
   - Default
   - TransparentFX
