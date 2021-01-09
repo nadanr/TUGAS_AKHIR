@@ -11,6 +11,8 @@ TagManager:
   - Lift
   - Restricted
   - LiftSwitch
+  - PrevSceneCollider
+  - Proyektor
   layers:
   - Default
   - TransparentFX

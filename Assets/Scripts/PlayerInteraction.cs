@@ -72,6 +72,11 @@ public class PlayerInteraction : MonoBehaviour
                 televisionScript.ShowInfo();
             }
 
+            else if (hit.transform.tag == "Proyektor")
+            {
+                Proyektor proyektorScript = hit.transform.GetComponent<Proyektor>();
+                proyektorScript.ShowInfo();
+            }
         }
     }
 }

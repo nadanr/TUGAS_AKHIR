@@ -24,7 +24,12 @@ public class SwitchScene : MonoBehaviour
             SceneManager.LoadScene(currentScene.buildIndex + 1);
         }
 
-        if (other.gameObject.tag == "LiftSwitch")
+        else if (other.gameObject.tag == "PrevSceneCollider")
+        {
+            SceneManager.LoadScene(currentScene.buildIndex - 1);
+        }
+
+        else if (other.gameObject.tag == "LiftSwitch")
         {
             infoUI.gameObject.SetActive(true);
             playerMovement.enableCameraMovement = false;

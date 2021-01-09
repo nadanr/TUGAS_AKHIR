@@ -309,7 +309,7 @@ public class BETA_SETTINGS{
         #endregion
 
         #region Headbobbing Settings - Start
-        originalLocalPosition = head.localPosition;
+        //originalLocalPosition = head.localPosition;
         if(GetComponent<AudioSource>() == null) { gameObject.AddComponent<AudioSource>(); }
         previousPosition = fps_Rigidbody.position;
         audioSource = GetComponent<AudioSource>();
