@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lantai 2.unity
     guid: 9a7b98d3d660ec64db12aa3d625bba84
+  - enabled: 1
+    path: Assets/Scenes/Lantai 3.unity
+    guid: 5227b1839aa8b594fbbd5f608d8ab90a
   m_configObjects: {}

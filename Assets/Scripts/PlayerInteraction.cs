@@ -77,6 +77,12 @@ public class PlayerInteraction : MonoBehaviour
                 Proyektor proyektorScript = hit.transform.GetComponent<Proyektor>();
                 proyektorScript.ShowInfo();
             }
+
+            else if (hit.transform.tag == "Book")
+            {
+                Books booksScript = hit.transform.GetComponent<Books>();
+                booksScript.BookId();
+            }
         }
     }
 }
