@@ -10,10 +10,19 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField]
     private Camera camera;
     [SerializeField]
-    private Image interactionImage; 
+    private Image interactionImage;
 
+    FirstPersonAIO playerMovement;
+    Transform player;
     public Transform PlayerCamera;
-    public float range = 2f; 
+    public float range = 2f;
+    private int flag = 0;
+
+    void Start()
+    {
+        player = GameObject.FindWithTag("Player").transform;
+        playerMovement = player.GetComponent<FirstPersonAIO>();
+    }
 
     private void Update()
     {
@@ -22,6 +31,23 @@ public class PlayerInteraction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             Interaction();
+        }
+
+        else if (Input.GetKeyDown(KeyCode.R) && flag == 0)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            playerMovement.enableCameraMovement = false;
+            flag = 1;
+        }
+
+        else if(Input.GetKeyDown(KeyCode.R) && flag == 1)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            playerMovement.enableCameraMovement = true;
+            flag = 0;
         }
     }
 
@@ -84,5 +110,19 @@ public class PlayerInteraction : MonoBehaviour
                 booksScript.BookId();
             }
         }
+    }
+
+    public void Resume()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        playerMovement.enableCameraMovement = true;
+        flag = 0;
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit Game");
+        Application.Quit();
     }
 }
